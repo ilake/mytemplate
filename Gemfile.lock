@@ -36,6 +36,9 @@ GEM
     activesupport (3.0.7)
     archive-tar-minitar (0.5.2)
     arel (2.0.10)
+    authlogic (3.0.3)
+      activerecord (>= 3.0.7)
+      activerecord (>= 3.0.7)
     builder (2.1.2)
     capistrano (2.6.0)
       highline
@@ -109,6 +112,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  authlogic
   capistrano
   jquery-rails (>= 0.2.6)
   nifty-generators

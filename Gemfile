@@ -8,6 +8,8 @@ gem 'rails', '3.0.7'
 # Use unicorn as the web server
 # gem 'unicorn'
 
+gem 'authlogic'
+
 gem 'jquery-rails', '>= 0.2.6'
 gem 'ruby-mysql'
 gem 'validates_email_format_of', :git => 'git://github.com/alexdunae/validates_email_format_of.git'
