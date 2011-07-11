@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.7'
+gem "rake", "0.9.2"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -9,6 +10,7 @@ gem 'rails', '3.0.7'
 # gem 'unicorn'
 
 gem 'authlogic'
+
 
 gem 'jquery-rails', '>= 0.2.6'
 gem 'ruby-mysql'
