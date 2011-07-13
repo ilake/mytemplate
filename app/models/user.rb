@@ -27,8 +27,13 @@ class User < ActiveRecord::Base
     Notifier.welcome_information(self).deliver
   end
 
-  def activate!
-    self.active = true
+  def email_activate!
+    self.email_active = true
+    save
+  end
+
+  def cellphone_activate!
+    self.cellphone_active = true
     save
   end
 
