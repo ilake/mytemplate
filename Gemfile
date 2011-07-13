@@ -21,6 +21,7 @@ gem 'validates_email_format_of', :git => 'git://github.com/alexdunae/validates_e
 group :development do
   gem 'ruby-debug19', :require => 'ruby-debug'
   gem "rails3-generators"
+  gem 'annotate'
   gem "nifty-generators"
   gem 'capistrano'
 end
