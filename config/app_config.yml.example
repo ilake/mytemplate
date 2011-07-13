@@ -1,0 +1,14 @@
+common: &default_settings
+  mail_domain: 'localhost:3000'
+  mail_account: 'example@gmail.com'
+  mail_pwd: 'example'
+  mail_from: 'Example <example@gmail.com>'
+development:
+  <<: *default_settings
+
+production:
+  <<: *default_settings
+  mail_domain: 'example.com'
+
+test:
+  <<: *default_settings

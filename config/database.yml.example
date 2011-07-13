@@ -1,0 +1,7 @@
+development:
+  adapter: mysql
+  database: example_dev
+  username: root
+  password:
+  host: localhost
+  encoding: utf8
