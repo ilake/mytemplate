@@ -4,9 +4,7 @@ class CreateUsers < ActiveRecord::Migration
     create_table :users do |t|
       t.string    :nickname,            :null => false       # optional, you can use email instead, or both
       t.string    :email,               :null => false       # optional, you can use nickname instead, or both
-      t.string    :cellphone
-      t.boolean   :email_active,        :default => false
-      t.boolean   :cellphone_active,    :default => false
+      t.boolean   :active,        :default => false
       t.string    :cached_slug
       t.string    :crypted_password,    :null => false       # optional, see below
       t.string    :password_salt,       :null => false       # optional, but highly recommended

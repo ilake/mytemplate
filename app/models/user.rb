@@ -5,8 +5,6 @@ class User < ActiveRecord::Base
     c.login_field = :nickname
   end
 
-  validates :cellphone, :uniqueness => true, :presence => true
-
   scope :login_recently, order("last_login_at DESC")
 
   def is_owner?(user)
@@ -27,13 +25,8 @@ class User < ActiveRecord::Base
     Notifier.welcome_information(self).deliver
   end
 
-  def email_activate!
-    self.email_active = true
-    save
-  end
-
-  def cellphone_activate!
-    self.cellphone_active = true
+  def activate!
+    self.active = true
     save
   end
 
@@ -42,56 +35,3 @@ class User < ActiveRecord::Base
     Notifier.password_reset_instructions(self).deliver
   end
 end
-
-# == Schema Information
-#
-# Table name: users
-#
-#  id                  :integer(4)      not null, primary key
-#  nickname            :string(255)     not null
-#  email               :string(255)     not null
-#  cellphone           :string(255)
-#  active              :boolean(1)      default(FALSE)
-#  cached_slug         :string(255)
-#  crypted_password    :string(255)     not null
-#  password_salt       :string(255)     not null
-#  persistence_token   :string(255)     not null
-#  single_access_token :string(255)     not null
-#  perishable_token    :string(255)     not null
-#  login_count         :integer(4)      default(0), not null
-#  failed_login_count  :integer(4)      default(0), not null
-#  last_request_at     :datetime
-#  current_login_at    :datetime
-#  last_login_at       :datetime
-#  current_login_ip    :string(255)
-#  last_login_ip       :string(255)
-#  created_at          :datetime
-#  updated_at          :datetime
-#
-
-# == Schema Information
-#
-# Table name: users
-#
-#  id                  :integer(4)      not null, primary key
-#  nickname            :string(255)     not null
-#  email               :string(255)     not null
-#  cellphone           :string(255)
-#  active              :boolean(1)      default(FALSE)
-#  cached_slug         :string(255)
-#  crypted_password    :string(255)     not null
-#  password_salt       :string(255)     not null
-#  persistence_token   :string(255)     not null
-#  single_access_token :string(255)     not null
-#  perishable_token    :string(255)     not null
-#  login_count         :integer(4)      default(0), not null
-#  failed_login_count  :integer(4)      default(0), not null
-#  last_request_at     :datetime
-#  current_login_at    :datetime
-#  last_login_at       :datetime
-#  current_login_ip    :string(255)
-#  last_login_ip       :string(255)
-#  created_at          :datetime
-#  updated_at          :datetime
-#
-
